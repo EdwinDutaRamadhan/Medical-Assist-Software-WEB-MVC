@@ -6,4 +6,9 @@ class Data extends Controller{
         $this->view('data/index', $data);
         $this->view('templates/footer');
     }
+    public function tambah(){
+        if($this->model('Data_models')->tambahDataMahasiswa($_POST)>0){
+            header('Location: '.BASEURL.'/Data');
+        }
+    }
 }
