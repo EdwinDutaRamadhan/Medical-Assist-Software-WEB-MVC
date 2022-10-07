@@ -1,7 +1,14 @@
 <div class="container mt-3">
+    <div class="row">
+        <div class="col-lg-6">
+            <?php Flasher::flash(); ?>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-lg-6">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah Data</button>
 </div>
-<div class="container mt-3">
+
     <table class="table table-hover">
         <tr>
             <th>No</th>

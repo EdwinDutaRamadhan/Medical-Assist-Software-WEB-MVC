@@ -12,9 +12,9 @@ class Data_models{
         return $this->db->resultSet();
     }
 
-    public function getMahasiswaById($id){
-        $this->db->query("SELECT * FROM tbl_mahasiswa WHERE id = :id");
-        $this->db->bind('id',$id);
+    public function getMahasiswaByNim($nim){
+        $this->db->query("SELECT * FROM tbl_mahasiswa WHERE Nim = :Nim");
+        $this->db->bind('Nim',$nim);
         return $this->db->single();
     }
     
