@@ -19,6 +19,7 @@
             <th>Vaksin 3</th>
             <th>Vaksin 4</th>
             <th>Vaksin 5</th>
+            <th colspan="2">Action</th>
         </tr>
         <?php $i=1; ?>
         <?php foreach($data['mahasiswa'] as $mahasiswa): ?>
@@ -31,6 +32,16 @@
                 <td><?= $mahasiswa['Vaksin3']; ?></td>
                 <td><?= $mahasiswa['Vaksin4']; ?></td>
                 <td><?= $mahasiswa['Vaksin5']; ?></td>
+                <td>
+                    <a href="#">
+                        <img src="<?= BASEURL; ?>/img/EditIcon.png" style="width:30px;" alt="alternative">
+                    </a>
+                </td>
+                <td>
+                    <a href="<?= BASEURL; ?>/Data/delete/<?= $mahasiswa['NIM']; ?>" onclick="return confirm('Apakah anda yakin ingin mengapus data <?= $mahasiswa['NIM']; ?>');" >
+                        <img src="<?= BASEURL; ?>/img/DeleteIcon.png" style="width:30px;" alt="alternative">
+                    </a>
+                </td>
             </tr>
             <?php $i++; ?>
         <?php endforeach; ?>

@@ -17,4 +17,15 @@ class Data extends Controller{
             exit;
         }
     }
+    public function delete($nim){
+        if($this->model('Data_models')->deleteDataMahasiswa($nim)>0){
+            Flasher::setFlash('berhasil','dihapus', 'success');
+            header('Location: '.BASEURL.'/Data');
+            exit;
+        }else{
+            Flasher::setFlash('gagal','dihapus', 'danger');
+            header('Location: '.BASEURL.'/Data');
+            exit;
+        }
+    }
 }

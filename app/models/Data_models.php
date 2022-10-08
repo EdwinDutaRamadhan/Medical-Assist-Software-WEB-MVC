@@ -13,8 +13,8 @@ class Data_models{
     }
 
     public function getMahasiswaByNim($nim){
-        $this->db->query("SELECT * FROM tbl_mahasiswa WHERE Nim = :Nim");
-        $this->db->bind('Nim',$nim);
+        $this->db->query("SELECT * FROM tbl_mahasiswa WHERE NIM = :NIM");
+        $this->db->bind('NIM',$nim);
         return $this->db->single();
     }
     
@@ -31,6 +31,15 @@ class Data_models{
         $this->db->bind('Vaksin4', $data['Vaksin4']);                
         $this->db->bind('Vaksin5', $data['Vaksin5']);                
         $this->db->execute();
+        return $this->db->rowCount();
+    }
+    public function deleteDataMahasiswa($nim){
+        $query = "DELETE FROM tbl_mahasiswa WHERE NIM = :NIM";
+        $this->db->query($query);
+        $this->db->bind('NIM',$nim);
+
+        $this->db->execute();
+
         return $this->db->rowCount();
     }
 }
