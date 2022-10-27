@@ -33,8 +33,8 @@
                 <td><?= $mahasiswa['Vaksin4']; ?></td>
                 <td><?= $mahasiswa['Vaksin5']; ?></td>
                 <td>
-                    <a href="#">
-                        <img src="<?= BASEURL; ?>/img/EditIcon.png" style="width:30px;" alt="alternative">
+                    <a href="<?= BASEURL; ?>/Data/update/<?= $mahasiswa['NIM']; ?>">
+                        <img src="<?= BASEURL; ?>/img/EditIcon.png" id="editButton" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:30px;" alt="alternative">
                     </a>
                 </td>
                 <td>
@@ -129,7 +129,7 @@
         
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="submit" name="submit" class="btn btn-primary">Tambah</button>
       </div>
       </form>

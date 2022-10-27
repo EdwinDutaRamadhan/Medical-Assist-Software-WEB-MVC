@@ -42,4 +42,27 @@ class Data_models{
 
         return $this->db->rowCount();
     }
+    public function updateDataMahasiswa($data){
+        $query = "UPDATE tbl_mahasiswa SET
+            NIM = :NIM,
+            Nama = :Nama,
+            Vaksin1 = :Vaksin1,
+            Vaksin2 = :Vaksin2,
+            Vaksin3 = :Vaksin3,
+            Vaksin4 = :Vaksin4,
+            Vaksin5 = :Vaksin5
+            WHERE NIM = :NIM";
+        $this->db->query($query);
+        $this->db->bind('NIM',$data['NIM']);
+        $this->db->bind('Nama',$data['Nama']);
+        $this->db->bind('Vaksin1',$data['Vaksin1']);
+        $this->db->bind('Vaksin2',$data['Vaksin2']);
+        $this->db->bind('Vaksin3',$data['Vaksin3']);
+        $this->db->bind('Vaksin4',$data['Vaksin4']);
+        $this->db->bind('Vaksin5',$data['Vaksin5']);
+        
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }
